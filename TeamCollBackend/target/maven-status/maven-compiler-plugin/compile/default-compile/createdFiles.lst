@@ -1,0 +1,4 @@
+com\coll\dao\BlogDAOImpl.class
+com\coll\dao\BlogDAO.class
+com\coll\model\Blog.class
+com\coll\config\DBConfig.class
