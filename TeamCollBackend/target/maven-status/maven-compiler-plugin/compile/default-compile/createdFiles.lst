@@ -1,4 +1,13 @@
 com\coll\dao\BlogDAOImpl.class
-com\coll\dao\BlogDAO.class
+com\coll\dao\JobDAO.class
+com\coll\dao\UserDAO.class
 com\coll\model\Blog.class
+com\coll\model\BlogComment.class
+com\coll\dao\JobDAOImpl.class
+com\coll\dao\BlogCommentDAO.class
+com\coll\dao\BlogDAO.class
 com\coll\config\DBConfig.class
+com\coll\model\UserDetail.class
+com\coll\dao\BlogCommentDAOImpl.class
+com\coll\model\Job.class
+com\coll\dao\UserDAOImpl.class

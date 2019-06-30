@@ -1,0 +1,4 @@
+com\coll\restcontroller\BlogRestController.class
+com\coll\config\WebInitializer.class
+com\coll\restcontroller\DemoRestController.class
+com\coll\config\WebResolver.class

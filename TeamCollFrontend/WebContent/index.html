@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+<script src="RouteConfig.js"></script>
+<script src="c_user/UserController.js"></script>
+<script src="c_blog/BlogController.js"></script>
+<script src="c_blog/BlogCommentController.js"></script>
+<script src="c_friend/FriendController.js"></script>
+<script src="c_chat/ChatController.js"></script>
+<script src="c_chat/ChatService.js"></script>
+<script src="c_job/JobController.js"></script>
+
+<!-- Bootstrap CDN -->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap CDN -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+
+
+<link rel="stylesheet" href="NavStyle.css">
+
+</head>
+<body>
+
+<!-- NavBar Implementation -->
+
+<nav class="navbar navbar-expand-lg navbar-dark nav-bk" id="nav1">
+  <div class="navbar-header">
+      <a class="navbar-brand" href="#/userHome">Team Collaboration</a>
+    </div>
+    <ul class="navbar-nav">
+    <li class="nav-item" ng-show="currentUser==undefined">
+      <a class="nav-link text-light" href="#/userHome">Home</a>
+    </li>
+    <li class="nav-item" ng-show="currentUser==undefined">
+      <a class="nav-link text-light" href="#/login">Login</a>
+    </li>
+    <li class="nav-item" ng-show="currentUser==undefined">
+      <a class="nav-link text-light" href="#/register">Register</a>
+    </li>
+    <li class="nav-item" ng-show="currentUser==undefined">
+      <a class="nav-link text-light" href="#/aboutus">About Us</a>
+    </li>
+    <li class="nav-item" ng-show="currentUser==undefined">
+      <a class="nav-link text-light" href="#/contactus">Contact Us</a>
+    </li>
+    
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Blog <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#/addBlog" ng-show="currentUser.role=='ROLE_USER'">Add Blog</a></li>
+        <li><a href="#/adminBlog" ng-show="currentUser.role=='ROLE_ADMIN'">Manage Blog</a></li>
+        <li><a href="#/showBlog">Show Blog</a></li>
+      </ul>
+    </li>
+    
+    <li ng-hide="currentUser==undefined"><a class="nav-link text-light" href="#/profileUpdate">Profile</a></li>
+    <li ng-hide="currentUser==undefined"><a class="nav-link text-light" href="#/friend">Friend</a></li>
+     <li ng-hide="currentUser==undefined"><a class="nav-link text-light" href="#/chat">Chat</a></li>
+   
+   
+   <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Job <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#/showJobs">Show Jobs</a></li>
+        <li><a href="#/manageJob" ng-show="currentUser.role=='ROLE_ADMIN'">Manage Job</a></li>
+      </ul>
+    </li>  
+   </ul>
+  <div class="nav navbar-nav navbar-right" ng-hide="currentUser==undefined">
+  	<img src="http://localhost:8081/TeamCollMiddleware/getImage/{{currentUser.username}}" width="20" height="20"/>
+  	<font color="white" size="4">
+  		Welcome {{currentUser.memberName}}
+  	</font>
+  		<span ng-controller="UserController">
+  		<a class="nav-link text-light" href="" ng-click="logout()"><span class="glyphicon glyphicon-log-out">Logout</span></a>
+  		</span>
+  </div>
+  
+</nav>
+<!-- NavBar Implementation -->
+
+<div ng-view></div>
+
+</body>
+</html>

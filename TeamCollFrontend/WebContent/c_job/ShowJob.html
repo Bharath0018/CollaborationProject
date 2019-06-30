@@ -1,0 +1,33 @@
+<div class="container" ng-controller="JobController">
+
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Job Details</h3>
+			</div>
+		<table class="table table-hover" id="dev-table">
+			<thead>
+				<tr>
+					<th>JobId</th>
+					<th>Designation</th>
+					<th>Company</th>
+					<th>CTC</th>
+					<th>Last Date to Apply</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="job in jobs">
+					<td>{{job.jobId}}</td>
+					<td>{{job.jobDesignation}}</td>
+					<td>{{job.companyName}}</td>
+					<td>{{job.ctc}}</td>
+					<td>{{job.lastDatetoApply}}</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+</div>
+</div>
+</div>

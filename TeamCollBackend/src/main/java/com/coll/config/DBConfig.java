@@ -14,6 +14,11 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.coll.model.Blog;
+import com.coll.model.BlogComment;
+import com.coll.model.Friend;
+import com.coll.model.Job;
+import com.coll.model.ProfilePicture;
+import com.coll.model.UserDetail;
 
 @Configuration
 @ComponentScan("com.coll")
@@ -27,7 +32,7 @@ public class DBConfig
 		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 		dataSource.setUsername("bharath");
 		dataSource.setPassword("pass123");
-		System.out.println("---DataSource Object Created");
+		System.out.println("---DataSource Object Created---");
 		return dataSource;
 	}
 	
@@ -42,6 +47,11 @@ public class DBConfig
 		factory.addProperties(prop);
 		
 		factory.addAnnotatedClass(Blog.class);
+		factory.addAnnotatedClass(BlogComment.class);
+		factory.addAnnotatedClass(UserDetail.class);
+		factory.addAnnotatedClass(Job.class);
+		factory.addAnnotatedClass(Friend.class);
+		factory.addAnnotatedClass(ProfilePicture.class);
 		
 		SessionFactory sessionFactory=factory.buildSessionFactory();
 		System.out.println("---SessionFactory Object Created---");

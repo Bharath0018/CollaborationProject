@@ -10,20 +10,33 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table
-@SequenceGenerator(name = "blogId_seq",sequenceName = "blogIdseq")
+@SequenceGenerator(name = "blogid_seq",sequenceName = "blogidseq")
 public class Blog 
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "blogId_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "blogid_seq")
 	@Column
-	int blogId;
-	public int getBlogId() {
-		return blogId;
+	int blogid;
+	
+	String blogName;
+	String blogContent;
+	String username;
+	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
+	Date createDate;
+	String status;
+	
+	int likes;
+	int dislikes;
+	
+	public int getBlogid() {
+		return blogid;
 	}
-	public void setBlogId(int blogId) {
-		this.blogId = blogId;
+	public void setBlogid(int blogid) {
+		this.blogid = blogid;
 	}
 	public String getBlogName() {
 		return blogName;
@@ -67,12 +80,6 @@ public class Blog
 	public void setDislikes(int dislikes) {
 		this.dislikes = dislikes;
 	}
-	String blogName;
-	String blogContent;
-	String username;
-	Date createDate;
-	String status;
-	int likes;
-	int dislikes;
+	
 
 }

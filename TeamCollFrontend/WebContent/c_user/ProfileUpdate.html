@@ -1,0 +1,18 @@
+<div class="container" ng-controller="UserController">
+	<div class="row">
+		<div class="main1">
+			<h3>Update your Profile Picture</h3>
+				<div class="login-or">
+					<hr class="hr-or">
+						<span class="span-or"></span>
+				</div>
+					<form method="post" role="form"action="http://localhost:8081/TeamCollMiddleware/doUpload" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="file">Picture</label>
+							<input type="file" name="file1" required>
+						</div>
+							<input type="submit" class="btn btn btn-primary" value="Upload"/>
+					</form>
+		</div>
+	</div>
+</div>

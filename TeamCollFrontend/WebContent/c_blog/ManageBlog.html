@@ -1,0 +1,33 @@
+<div class="container" ng-controller="BlogController">
+	<div class="row">
+		<div class="main1">
+			<h3>Show All Blogs</h3>
+			<div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default" ng-repeat="blog in blogdata">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="/#{{blog.blogid}}">{{blog.blogName}}</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span ng-show="blog.status=='NA'">
+								<img src="approve.jpg" title="Approve" width="20" height="20" ng-click="approve(blog.blogid)"/>
+								</span>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span ng-show="blog.status=='A'">
+								<img src="reject.jpg" title="Reject" width="20" height="20" ng-click="reject(blog.blogid)"/>
+								</span>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span>
+								<img src="delete.jpg" title="Delete" width="20" height="20" ng-click="deleteBlog(blog.blogid)"/>
+								</span>
+							</h4>
+						</div>
+							<div id="{{blog.blogid}}" class="panel-collapse collapse">
+								<div class="panel-body">{{blog.blogContent}}</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

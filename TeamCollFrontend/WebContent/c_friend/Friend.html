@@ -1,0 +1,56 @@
+<div class="container" ng-controller="FriendController">
+	<div class="row">
+		<div class="main1">
+			<h3>Friends List</h3>
+		</div>
+	</div>
+	
+	<div style="background-color:grey"><h3 align="left">Friend List</h3></div>
+	
+	<div class="row text-center text-lg-left">
+		<div ng-repeat="friend in friendList" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div ng-show="friend.username==currentUser.username">
+				<img src="http://localhost:8081/TeamCollMiddleware/getImage/{{friend.friendusername}}" class="img-circle" width="100" height="100"/>
+					<p><strong>{{friend.friendusername}}</strong></p>
+						<input type="button" value="Unfriend" ng-click="unfriend(friend.friendId)" class="btn btn-danger"/>
+					</p>		
+			</div>
+			<div ng-show="friend.friendusername==currentUser.username">
+				<img src="http://localhost:8081/TeamCollMiddleware/getImage/{{friend.username}}" class="img-circle" width="100" height="100"/>
+				<p><strong>{{friend.username}}</strong></p>
+						<input type="button" value="Unfriend" ng-click="unfriend(friend.friendId)" class="btn btn-danger"/>
+					</p>	
+			</div>
+		</div>
+	</div>
+	
+	<div style="background-color:grey"><h3 align="left">Pending Friend List</h3></div>
+	
+	<div class="row text-center text-lg-left">
+		<div ng-repeat="friend in pendingFriendList" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			
+			<div ng-show="friend.friendusername==currentUser.username">
+				<img src="http://localhost:8081/TeamCollMiddleware/getImage/{{friend.username}}" class="img-circle" width="100" height="100"/>
+				<p><strong>{{friend.username}}</strong></p>
+						<input type="button" value="Accept" ng-click="accept(friend.friendId)" class="btn btn-success"/>
+						<input type="button" value="Reject" ng-click="unfriend(friend.friendId)" class="btn btn-danger"/>
+					</p>	
+			</div>
+		</div>
+	</div>
+	
+	<div style="background-color:grey"><h3 align="left">Suggested Friends List</h3></div>
+	
+	<div class="row text-center text-lg-left">
+		<div ng-repeat="friend in suggestedFriendList" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			
+			<div>
+				<img src="http://localhost:8081/TeamCollMiddleware/getImage/{{friend.username}}" class="img-circle" width="100" height="100"/>
+				<p><strong>{{friend.username}}</strong></p>
+						<input type="button" value="Send Request" ng-click="send(friend.username)" class="btn btn-success"/>
+						
+					</p>	
+			</div>
+		</div>
+	</div>
+</div>

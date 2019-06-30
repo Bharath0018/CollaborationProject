@@ -1,4 +1,13 @@
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\model\UserDetail.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\BlogDAO.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\UserDAOImpl.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\JobDAO.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\model\BlogComment.java
 D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\config\DBConfig.java
 D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\model\Blog.java
-D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\BlogDAO.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\JobDAOImpl.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\BlogCommentDAOImpl.java
 D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\BlogDAOImpl.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\BlogCommentDAO.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\dao\UserDAO.java
+D:\CollaborationProject\TeamCollBackend\src\main\java\com\coll\model\Job.java

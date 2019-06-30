@@ -1,0 +1,47 @@
+<div class="row" ng-controller="JobController">
+    <div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Publish Job
+			</div>
+			<div class="panel-body">
+				<form name="myform">
+					<div class="form-group">
+						<label for="myName">Job Designation</label>
+						<input id="myName" name="myName" ng-model="job.jobDesignation" class="form-control" type="text" data-validation="required">
+						<span id="error_name" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label for="lastname">Company Name</label>
+						<input id="lastname" name="lastname" ng-model="job.companyName" class="form-control" type="text">
+						<span id="error_lastname" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label for="ctc">CTC</label>
+						<input id="age" name="ctc" ng-model="job.ctc" class="form-control" type="number" min="1" >
+					
+					</div>
+					<div class="form-group">
+						<label for="lastname">Last Date to Apply</label>
+						<input id="lastname" name="lastname" ng-model="job.lastDatetoApply" class="form-control" type="text">
+						<span id="error_lastname" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label for="age">Location</label>
+						<input id="age" name="age" ng-model="job.location" class="form-control" type="text" min="1" >
+						<span id="error_age" class="text-danger"></span>
+				<div class="form-group">
+						<label for="age">Skills Required</label>
+						<input id="age" name="age" ng-model="job.skills" class="form-control" type="text" min="1" >
+						<span id="error_age" class="text-danger"></span>
+					
+					
+					<button id="submit" type="submit" value="submit" ng-click="publishJob()" class="btn btn-primary center">Publish Job</button>
+					<button id="submit" type="submit" value="submit" ng-click="showJobs()" class="btn btn-primary center">Show Jobs</button>
+					
+			
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
